@@ -1,3 +1,5 @@
+#读写点云，网格，图片文件
+
 import numpy as np
 import open3d as o3d
 pcd=o3d.io.read_point_cloud("rs1.pcd")
