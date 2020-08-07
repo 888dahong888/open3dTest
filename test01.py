@@ -2,6 +2,8 @@ import numpy as np
 import open3d as o3d
 pcd=o3d.io.read_point_cloud("rs1.pcd")
 
+print(pcd)      #打印点云数量
+
 #可视化一下
 o3d.visualization.draw_geometries([pcd])
  
@@ -18,3 +20,11 @@ print("Print a normal vector of the 0th point")
 print(downpcd.normals[0])
 print("Print the normal vectors of the first 10 points")
 print(np.asarray(downpcd.normals)[:10, :])
+
+o3d.io.write_point_cloud("copy_rs1.pcd",pcd)
+
+#打印网格
+mesh=o3d.io.read_triangle_mesh("Box.stl")
+o3d.visualization.draw_geometries([mesh])
+print(mesh)
+o3d.io.write_triangle_mesh("copy_box.stl",mesh)
