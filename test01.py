@@ -28,3 +28,8 @@ mesh=o3d.io.read_triangle_mesh("Box.stl")
 o3d.visualization.draw_geometries([mesh])
 print(mesh)
 o3d.io.write_triangle_mesh("copy_box.stl",mesh)
+
+#读写图像
+img=o3d.io.read_image('image.jpg')
+print(img)
+o3d.io.write_image("copy_img.jpg",img)
